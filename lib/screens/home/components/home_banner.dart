@@ -27,10 +27,6 @@ class HomeBanner extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-              AnimatedTextKit(animatedTexts: [
-                WavyAnimatedText("This is my portfolio",textStyle: Theme.of(context).textTheme.titleMedium),
-
-              ]),
 
                 if (Responsive.isMobileLarge(context))
                   const SizedBox(height: defaultPadding / 2),
@@ -68,20 +64,17 @@ class MyBuildAnimatedText extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTextStyle(
       // it applies same style to all the widgets under it
-      style: Theme.of(context).textTheme.subtitle1!,
-      maxLines: 1,
+      style: Theme.of(context).textTheme.titleMedium!,
       child: Row(
         children: [
-          if (!Responsive.isMobileLarge(context)) FlutterCodedText(),
+          // if (!Responsive.isMobileLarge(context)) FlutterCodedText(),
           if (!Responsive.isMobileLarge(context))
             SizedBox(width: defaultPadding / 2),
-          Text("I build "),
           Responsive.isMobile(context)
               ? Expanded(child: AnimatedText())
               : AnimatedText(),
           if (!Responsive.isMobileLarge(context))
             SizedBox(width: defaultPadding / 2),
-          if (!Responsive.isMobileLarge(context)) FlutterCodedText(),
         ],
       ),
     );
@@ -98,18 +91,23 @@ class AnimatedText extends StatelessWidget {
     return AnimatedTextKit(
       animatedTexts: [
         TyperAnimatedText(
-          "responsive web and mobile app.",
-          speed: Duration(milliseconds: 60),
+          "Fullstack Android apps",
+          speed: Duration(milliseconds: 30),
         ),
         TyperAnimatedText(
-          "complete e-Commerce app UI.",
-          speed: Duration(milliseconds: 60),
+          "Fullstack Flutter apps",
+          speed: Duration(milliseconds: 30),
         ),
-        TyperAnimatedText(
-          "Chat app with dark and light theme.",
-          speed: Duration(milliseconds: 60),
-        ),
+        TyperAnimatedText("Experienced Project Manager with a "
+            "demonstrated history of working in the marketing and "
+            "advertising industry. Skilled in Mobile Application "
+            "Development, API, Kotlin, Java , Unit testing and Flutter/Dart . "
+            "Strong program and project management professional with a Bachelor of Science (BS) focused in Computer Science.",
+            speed: Duration(milliseconds: 30),curve: Curves.easeIn),
       ],
+      totalRepeatCount: 1,
+      isRepeatingAnimation: true,
+
     );
   }
 }

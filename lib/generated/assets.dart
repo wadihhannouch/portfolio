@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String assetsWadihHannouchCv = 'assets/WadihHannouchCv.pdf';
   static const String iconsBehance = 'assets/icons/behance.svg';
   static const String iconsCheck = 'assets/icons/check.svg';
   static const String iconsDownload = 'assets/icons/download.svg';

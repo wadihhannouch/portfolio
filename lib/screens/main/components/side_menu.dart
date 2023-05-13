@@ -47,12 +47,13 @@ class SideMenu extends StatelessWidget {
                     Skills(),
                     SizedBox(height: defaultPadding),
                     Coding(),
-                    Knowledges(),
+                    // Knowledges(),
                     Divider(),
                     SizedBox(height: defaultPadding / 2),
                     TextButton(
                       onPressed: () {
-                        openNewTab("https://www.orimi.com/pdf-test.pdf");
+                        showCV();
+                        // openNewTab("https://www.orimi.com/pdf-test.pdf");
                       },
                       child: FittedBox(
                         child: Row(
