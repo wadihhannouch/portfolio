@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile/responsive.dart';
 
 import '../constants.dart';
 
@@ -19,9 +20,9 @@ class AnimatedCounter extends StatelessWidget {
       duration: defaultDuration,
       builder: (context, value, child) => Text(
         "$value$text",
-        style: Theme.of(context)
+        style: Responsive.isDesktop(context) == true ? Theme.of(context).textTheme.titleLarge?.copyWith(color: primaryColor) : Theme.of(context)
             .textTheme
-            .headline6!
+            .bodyMedium!
             .copyWith(color: primaryColor),
       ),
     );

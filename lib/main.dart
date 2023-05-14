@@ -15,20 +15,24 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Wadih Hannouch Portfolio',
       // we are using dark theme and we modify it as our need
       theme: ThemeData.dark().copyWith(
         primaryColor: primaryColor,
         scaffoldBackgroundColor: bgColor,
         canvasColor: bgColor,
-        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
+        textTheme: GoogleFonts.oswaldTextTheme(Theme.of(context).textTheme)
             .apply(bodyColor: Colors.white)
             .copyWith(
-              bodySmall: TextStyle(color: bodyTextColor),
-              bodyMedium: TextStyle(color: bodyTextColor),
+              bodySmall: TextStyle(color: whiteColor),
+              bodyMedium: TextStyle(color: whiteColor),
+              titleLarge: TextStyle(fontSize: 18,color: whiteColor),
+              titleMedium:  TextStyle(fontSize: 14,color: whiteColor),
+              titleSmall:  TextStyle(fontSize: 12,color: whiteColor),
             ),
       ),
       home: HomeScreen(),
     );
   }
 }
+

@@ -37,13 +37,18 @@ class SideMenu extends StatelessWidget {
                     ),
                     AreaInfoText(
                       title: "Email",
-                      text: "wadihhannouch@gmail.com",
+                      text: email,
+                      onClick: (){
+                        mlaunchUrl(Uri.parse("mailto:$email"));
+                      },
                     ),
                     AreaInfoText(
                       title: "Phone",
-                      text: "+96597746257",
+                      text: phoneNumber,
+                      onClick: (){
+                        mlaunchUrl(Uri.parse("tel:$phoneNumber"));
+                      },
                     ),
-
                     Skills(),
                     SizedBox(height: defaultPadding),
                     Coding(),
@@ -52,20 +57,16 @@ class SideMenu extends StatelessWidget {
                     SizedBox(height: defaultPadding / 2),
                     TextButton(
                       onPressed: () {
-                        showCV();
-                        // openNewTab("https://www.orimi.com/pdf-test.pdf");
+                        openNewTab("https://drive.google.com/file/d/1uAxfzjPgnxHUbRAFojUY3FYPe4AUEtAV/view?usp=share_link");
                       },
                       child: FittedBox(
                         child: Row(
                           children: [
                             Text(
                               "DOWNLOAD CV",
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .color,
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium?.copyWith(color: bodyTextColor)
                             ),
                             SizedBox(width: defaultPadding / 2),
                             SvgPicture.asset("assets/icons/download.svg")

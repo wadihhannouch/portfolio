@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../constants.dart';
 
@@ -7,9 +8,12 @@ class AreaInfoText extends StatelessWidget {
     Key? key,
     this.title,
     this.text,
+    this.onClick
+
   }) : super(key: key);
 
   final String? title, text;
+  final Function()? onClick;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +24,17 @@ class AreaInfoText extends StatelessWidget {
         children: [
           Text(
             title!,
-            style: TextStyle(color: Colors.white),
           ),
-          Text(text!),
+          Flexible(
+            child: InkWell(
+              splashColor: null,
+                onTap: onClick,
+                child: Text(text!,style: TextStyle(color: onClick != null ? secondPColor: Colors.white,),textAlign: TextAlign.end,)),
+          ),
         ],
       ),
     );
   }
 }
+
+

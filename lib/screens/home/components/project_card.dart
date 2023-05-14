@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile/extensions.dart';
 import 'package:flutter_profile/models/Project.dart';
@@ -25,17 +26,16 @@ class ProjectCard extends StatelessWidget {
             project.title!,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.subtitle2,
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
           Spacer(),
-          Text(
+          AutoSizeText(
             project.description!,
-            maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(height: 1.5),
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.5),
+            maxLines: 5,
           ),
           Spacer(),
-          project.url == null ? Container():
+          project.url == null ? Text("Project In Progress",style:TextStyle(color: bodyTextColor)):
           TextButton(
             onPressed: () {
               openNewTab(project.url!);

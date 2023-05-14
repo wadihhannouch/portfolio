@@ -1,14 +1,31 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_profile/constants.dart';
+import 'package:flutter_profile/generated/assets.dart';
 import 'package:flutter_profile/responsive.dart';
 
 import 'components/side_menu.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   const MainScreen({Key? key, required this.children}) : super(key: key);
 
   final List<Widget> children;
 
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Remove `loading` div
+    final loader = document.getElementsByClassName('loading');
+    if(loader.isNotEmpty) {
+      loader.first.remove();
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,12 +55,14 @@ class MainScreen extends StatelessWidget {
                   flex: 2,
                   child: SideMenu(),
                 ),
+              if (Responsive.isDesktop(context))
               SizedBox(width: defaultPadding),
               Expanded(
                 flex: 7,
                 child: SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
                   child: Column(
-                    children: children,
+                    children: widget.children,
                   ),
                 ),
               ),

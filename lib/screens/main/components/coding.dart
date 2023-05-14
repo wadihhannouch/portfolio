@@ -35,11 +35,15 @@ class Coding extends StatelessWidget {
         ),
         AnimatedLinearProgressIndicator(
           percentage: 0.75,
-          label: "CSS",
+          label: "Unit testing",
         ),
         AnimatedLinearProgressIndicator(
-          percentage: 0.58,
-          label: "JavaScript",
+          percentage: 0.9,
+          label: "Java",
+        ),
+        AnimatedLinearProgressIndicator(
+          percentage: 0.75,
+          label: "CI/CD",
         ),
       ],
     );
