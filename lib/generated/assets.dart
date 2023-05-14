@@ -2,19 +2,10 @@
 class Assets {
   Assets._();
 
-  static const String assetsImg = 'assets/portfolio.png';
-  static const String assetsWadihHannouchCv = 'assets/WadihHannouchCv.pdf';
-  static const String iconsBehance = 'assets/icons/behance.svg';
   static const String iconsCheck = 'assets/icons/check.svg';
   static const String iconsDownload = 'assets/icons/download.svg';
-  static const String iconsDribble = 'assets/icons/dribble.svg';
   static const String iconsGithub = 'assets/icons/github.svg';
   static const String iconsLinkedin = 'assets/icons/linkedin.svg';
-  static const String iconsTwitter = 'assets/icons/twitter.svg';
-  static const String imagesBg = 'assets/images/bg.jpeg';
-  static const String imagesIMG7344 = 'assets/images/IMG_7344.jpg';
-  static const String imagesImg = 'assets/images/portfolio.png';
-  static const String imagesImg1 = 'assets/images/img_1.png';
   static const String imagesImg2 = 'assets/images/img_2.png';
   static const String imagesProfile = 'assets/images/profile.jpeg';
 
